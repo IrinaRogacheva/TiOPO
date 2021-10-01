@@ -1,0 +1,14 @@
+C:\Users\Irina\source\repos\Testing\Triangle\Triangle\bin\Debug\Triangle.exe.config
+C:\Users\Irina\source\repos\Testing\Triangle\Triangle\bin\Debug\Triangle.exe
+C:\Users\Irina\source\repos\Testing\Triangle\Triangle\bin\Debug\Triangle.pdb
+C:\Users\Irina\source\repos\Testing\Triangle\Triangle\obj\Debug\Triangle.csproj.CoreCompileInputs.cache
+C:\Users\Irina\source\repos\Testing\Triangle\Triangle\obj\Debug\Triangle.exe
+C:\Users\Irina\source\repos\Testing\Triangle\Triangle\obj\Debug\Triangle.pdb
+C:\Users\Irina\source\repos\Testing\Triangle\Triangle\obj\Debug\Triangle.csprojAssemblyReference.cache
+C:\Users\Irina\source\repos\TiOPO\Triangle\Triangle\bin\Debug\Triangle.exe.config
+C:\Users\Irina\source\repos\TiOPO\Triangle\Triangle\bin\Debug\Triangle.exe
+C:\Users\Irina\source\repos\TiOPO\Triangle\Triangle\bin\Debug\Triangle.pdb
+C:\Users\Irina\source\repos\TiOPO\Triangle\Triangle\obj\Debug\Triangle.csprojAssemblyReference.cache
+C:\Users\Irina\source\repos\TiOPO\Triangle\Triangle\obj\Debug\Triangle.csproj.CoreCompileInputs.cache
+C:\Users\Irina\source\repos\TiOPO\Triangle\Triangle\obj\Debug\Triangle.exe
+C:\Users\Irina\source\repos\TiOPO\Triangle\Triangle\obj\Debug\Triangle.pdb
