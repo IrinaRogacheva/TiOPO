@@ -1,0 +1,22 @@
+URL: http://91.210.252.240/broken-links/index.html
+URL: http://91.210.252.240/broken-links/index.html status is :OK
+URL: http://91.210.252.240/broken-links/about.html
+URL: http://91.210.252.240/broken-links/about.html status is :OK
+URL: http://91.210.252.240/broken-links/work.html
+URL: http://91.210.252.240/broken-links/work.html status is :OK
+URL: http://91.210.252.240/broken-links/pricing.html
+URL: http://91.210.252.240/broken-links/pricing.html status is :OK
+URL: http://91.210.252.240/broken-links/blog.html
+URL: http://91.210.252.240/broken-links/blog.html status is :OK
+URL: http://91.210.252.240/broken-links/contact.html
+URL: http://91.210.252.240/broken-links/contact.html status is :OK
+URL: http://91.210.252.240/broken-links/#
+URL: http://91.210.252.240/broken-links/# status is :OK
+URL: http://91.210.252.240/links/502gateaway502.php
+URL: http://91.210.252.240/links/access401unauthorized.php
+URL: http://91.210.252.240/broken-links/blog-single.html
+URL: http://91.210.252.240/broken-links/blog-single.html status is :OK
+URL: http://91.210.252.240/links/deny403forbidden.php
+Just text
+Всего ссылок: System.IO.StreamWriter
+Дата проверки: 07.10.2021 0:00:00

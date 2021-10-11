@@ -1,0 +1,16 @@
+http://91.210.252.240/broken-links/index.html
+OK
+http://91.210.252.240/broken-links/about.html
+OK
+http://91.210.252.240/broken-links/work.html
+OK
+http://91.210.252.240/broken-links/pricing.html
+OK
+http://91.210.252.240/broken-links/blog.html
+OK
+http://91.210.252.240/broken-links/contact.html
+OK
+http://91.210.252.240/broken-links/contact.html#
+OK
+Всего ссылок: 7
+Дата проверки: 11.10.2021 0:00:00 9:23:33 
