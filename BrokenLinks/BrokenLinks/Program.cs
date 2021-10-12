@@ -1,7 +1,5 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Interactions;
-using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,95 +10,97 @@ namespace BrokenLinks
 {
     class Program
     {
-        static void CheckLinks(ref IWebDriver webDriver, ref string href, ref int validLinksNumber, ref int invalidLinksNumber, HashSet<string> urlSet, StreamWriter validLinks, StreamWriter invalidLinks)
-        {
-            webDriver.Navigate().GoToUrl(href);
-            HttpWebRequest req = null;
-            IList<IWebElement> urls = webDriver.FindElements(By.TagName("a"));
+        const string START_URL = "http://91.210.252.240/broken-links/";
+        const string DOMEN = "http://91.210.252.240";
 
+        static void CheckLinksOnOnePage(IWebDriver webDriver, string tagName, string attributeName, ref int validLinksNumber, ref int invalidLinksNumber, HashSet<string> previousLinks, StreamWriter validLinksFile, StreamWriter invalidLinksFile, List<string> validLinks)
+        {
+            HttpWebRequest req = null;
+            IList<IWebElement> urls = webDriver.FindElements(By.TagName(tagName));
+            string href;
             foreach (var url in urls)
             {
-
-                WebDriverWait waitForElement = new WebDriverWait(webDriver, TimeSpan.FromSeconds(5));
-                //var newLinks = webDriver.FindElements(By.TagName("a"))[i];
-                waitForElement.Until(drv => drv.FindElements(By.TagName("a")));
-
-                bool staleElement = true;
-                while (staleElement)
+                try
                 {
-                    try
+                    href = url.GetAttribute(attributeName);
+                    if (!String.IsNullOrEmpty(href) && href.Contains('#'))
                     {
-                        href = url.GetAttribute("href");
-                        if (!String.IsNullOrEmpty(href) && href.StartsWith("http://91.210.252.240") && !urlSet.Contains(href))
+                        href = href.Substring(0, href.IndexOf('#'));
+                    }
+                    if (!String.IsNullOrEmpty(href) && href.StartsWith(DOMEN) && !previousLinks.Contains(href))
+                    {
+                        try
                         {
                             req = (HttpWebRequest)WebRequest.Create(href);
+                            req.AllowAutoRedirect = false;
                             var response = (HttpWebResponse)req.GetResponse();
-                            System.Console.WriteLine($"URL: {href} status is :{response.StatusCode}");
-                            urlSet.Add(href);
-                            validLinks.WriteLine(href);
-                            validLinks.WriteLine(response.StatusCode);
+                            validLinksFile.WriteLine(href);
+                            validLinksFile.WriteLine((int)response.StatusCode);
                             validLinksNumber++;
-                            Actions actions = new Actions(webDriver);
-                            //actions.MoveToElement(url).Click();
-                            CheckLinks(ref webDriver, ref href, ref validLinksNumber, ref invalidLinksNumber, urlSet, validLinks, invalidLinks);
-                            webDriver.Navigate().Back();
+                            if (tagName == "a")
+                            {
+                                validLinks.Add(href);
+                            }
                         }
-                        staleElement = false;
-                    }
-                    catch (WebException e)
-                    {
-                        var errorResponse = (HttpWebResponse)e.Response;
-                        System.Console.WriteLine($"URL: {href} status is :{errorResponse.StatusCode}");
-                        urlSet.Add(href);
-                        invalidLinks.WriteLine(href);
-                        invalidLinks.WriteLine(errorResponse.StatusCode);
-                        invalidLinksNumber++;
-                        staleElement = false;
-                    }
-                    catch (StaleElementReferenceException e)
-                    {
-                        
-                        if (String.IsNullOrEmpty(href) || !href.StartsWith("http://91.210.252.240") || urlSet.Contains(href))
+                        catch (WebException e)
                         {
-                            staleElement = false;
-                            continue;
+                            var errorResponse = (HttpWebResponse)e.Response;
+                            invalidLinksFile.WriteLine(href);
+                            invalidLinksFile.WriteLine((int)errorResponse.StatusCode);
+                            invalidLinksNumber++;
                         }
-                        else
-                        {
-                            staleElement = true;
-                        }
+                        previousLinks.Add(href);
                     }
+                }
+                catch (StaleElementReferenceException)
+                {
+                }
+            }
+        }
+
+        static void CheckLinksRecursively(IWebDriver webDriver, string startUrl, ref int validLinksNumber, ref int invalidLinksNumber, HashSet<string> previousLinks, StreamWriter validLinksFile, StreamWriter invalidLinksFile, List<string> validLinks)
+        {
+            webDriver.Navigate().GoToUrl(startUrl);
+            CheckLinksOnOnePage(webDriver, "a", "href", ref validLinksNumber, ref invalidLinksNumber, previousLinks, validLinksFile, invalidLinksFile, validLinks);
+            CheckLinksOnOnePage(webDriver, "script", "src", ref validLinksNumber, ref invalidLinksNumber, previousLinks, validLinksFile, invalidLinksFile, validLinks);
+            CheckLinksOnOnePage(webDriver, "link", "href", ref validLinksNumber, ref invalidLinksNumber, previousLinks, validLinksFile, invalidLinksFile, validLinks);
+            CheckLinksOnOnePage(webDriver, "img", "src", ref validLinksNumber, ref invalidLinksNumber, previousLinks, validLinksFile, invalidLinksFile, validLinks);
+            validLinks.Remove(startUrl);
+            foreach (string validHref in validLinks)
+            {
+                CheckLinksRecursively(webDriver, validHref, ref validLinksNumber, ref invalidLinksNumber, previousLinks, validLinksFile, invalidLinksFile, validLinks);
+                validLinks.Remove(validHref);
+                if (validLinks.Count() == 0)
+                {
+                    break;
                 }
             }
         }
 
         static void Main(string[] args)
         {
-            ChromeOptions options = new ChromeOptions();
-            options.AddArguments("--ignore-certificate-errors", "--ignore-ssl-errors");
-            IWebDriver webDriver = new ChromeDriver(@"C:\Users\Irina\source\repos\chromedriver", options);
-
-            StreamWriter validLinks = new StreamWriter("../../valid_links.txt");
-            StreamWriter invalidLinks = new StreamWriter("../../invalid_links.txt");
+            IWebDriver webDriver = new ChromeDriver(@"C:\Users\Irina\source\repos\TiOPO\BrokenLinks\chromedriver");
 
             int validLinksNumber = 0;
             int invalidLinksNumber = 0;
 
-            HashSet<string> urlSet = new HashSet<string>();
-            string url = "http://91.210.252.240/broken-links/";
+            HashSet<string> previousLinks = new HashSet<string>();
 
-            CheckLinks(ref webDriver, ref url, ref validLinksNumber, ref invalidLinksNumber, urlSet, validLinks, invalidLinks);
+            StreamWriter validLinksFile = new StreamWriter("../../valid_links.txt");
+            StreamWriter invalidLinksFile = new StreamWriter("../../invalid_links.txt");
+           
+            List<string> validLinks = new List<string>();
 
+            CheckLinksRecursively(webDriver, START_URL, ref validLinksNumber, ref invalidLinksNumber, previousLinks, validLinksFile, invalidLinksFile, validLinks);
 
-            validLinks.WriteLine($"Всего ссылок: {validLinksNumber}");
-            invalidLinks.WriteLine($"Всего ссылок: {invalidLinksNumber}");
+            validLinksFile.WriteLine($"Всего ссылок: {validLinksNumber}");
+            invalidLinksFile.WriteLine($"Всего ссылок: {invalidLinksNumber}");
 
-            DateTime thisDay = DateTime.Today;
-            validLinks.WriteLine($"Дата проверки: {thisDay.ToString()} {DateTime.Now.ToString("h:mm:ss tt")}");
-            invalidLinks.WriteLine($"Дата проверки: {thisDay.ToString()} {DateTime.Now.ToString("h:mm:ss tt")}");
+            validLinksFile.WriteLine($"Дата проверки: {DateTime.Now.ToString()}");
+            invalidLinksFile.WriteLine($"Дата проверки: {DateTime.Now.ToString()}");
 
-            validLinks.Close();
-            invalidLinks.Close();
+            validLinksFile.Close();
+            invalidLinksFile.Close();
         }
     }
 }
