@@ -10,8 +10,8 @@ namespace BrokenLinks
 {
     class Program
     {
-        const string START_URL = "http://91.210.252.240/broken-links/";
-        const string DOMEN = "http://91.210.252.240";
+        const string START_URL = "http://www.deadlinkcity.com";
+        const string DOMEN = "http://www.deadlinkcity.com";
 
         static void CheckLinksOnOnePage(IWebDriver webDriver, string tagName, string attributeName, ref int validLinksNumber, ref int invalidLinksNumber, HashSet<string> previousLinks, StreamWriter validLinksFile, StreamWriter invalidLinksFile, List<string> validLinks)
         {
