@@ -12,11 +12,10 @@ namespace CalculatorTests
         public void VariableWithCorrectName_VarIsAdded()
         {
             Calculator.Calculator calculator = new Calculator.Calculator();
-            
+
             calculator.DeclareVariable("x");
             Dictionary<string, double> vars = calculator.GetVars();
 
-            Assert.IsTrue(vars.ContainsKey("x"));
             Assert.IsTrue(Double.IsNaN(vars["x"]));
         }
 
@@ -83,7 +82,6 @@ namespace CalculatorTests
             calculator.SetVariable("x", "3,14");
             Dictionary<string, double> vars = calculator.GetVars();
 
-            Assert.IsTrue(vars.ContainsKey("x"));
             Assert.IsTrue(vars["x"] == 3.14);
         }
 
@@ -103,7 +101,7 @@ namespace CalculatorTests
         {
             Calculator.Calculator calculator = new Calculator.Calculator();
             calculator.SetVariable("x", "20");
-            calculator.DeclareFunction("fn", "x");
+            DeclareFunction(calculator, "fn", "x");
             calculator.SetVariable("y", "fn");
 
             Assert.IsTrue(calculator.GetValue("y") == 20);
@@ -114,8 +112,8 @@ namespace CalculatorTests
         public void ReassigneVarWithFnName_ArgumentExceptionThrown()
         {
             Calculator.Calculator calculator = new Calculator.Calculator();
-            calculator.DeclareVariable("x");
-            calculator.DeclareFunction("fn", "x");
+            DeclareVariable(calculator, "x");
+            DeclareFunction(calculator, "fn", "x");
 
             calculator.SetVariable("fn", "3,14");
         }
@@ -125,7 +123,7 @@ namespace CalculatorTests
         public void ReassigneVarWithNameThatNotDeclared_InvalidOperationExceptionThrown()
         {
             Calculator.Calculator calculator = new Calculator.Calculator();
-            
+
             calculator.SetVariable("x", "y");
         }
 
@@ -136,10 +134,20 @@ namespace CalculatorTests
             Calculator.Calculator calculator = new Calculator.Calculator();
             calculator.SetVariable("x", "60");
             calculator.SetVariable("y", "20");
-            calculator.DeclareFunction("fn", "x/y");
-            
+            DeclareFunction(calculator, "fn", "x/y");
+
             calculator.SetVariable("y", "0");
             Assert.IsTrue(calculator.GetValue("y") == 20);
+        }
+
+        private void DeclareVariable(Calculator.Calculator calculator, string varName)
+        {
+            calculator.DeclareVariable(varName);
+        }
+
+        private void DeclareFunction(Calculator.Calculator calculator, string fnName, string fnValue)
+        {
+            calculator.DeclareFunction(fnName, fnValue);
         }
     }
 
@@ -150,8 +158,8 @@ namespace CalculatorTests
         public void DeclareFunctionWithOperation_FunctionIsDeclared()
         {
             Calculator.Calculator calculator = new Calculator.Calculator();
-            calculator.DeclareVariable("x");
-            calculator.DeclareVariable("y");
+            DeclareVariable(calculator, "x");
+            DeclareVariable(calculator, "y");
 
             calculator.DeclareFunction("fn", "x+y");
             Dictionary<string, double> fns = calculator.GetFns();
@@ -164,12 +172,12 @@ namespace CalculatorTests
         public void RecalculateFunction_FunctionIsDeclared()
         {
             Calculator.Calculator calculator = new Calculator.Calculator();
-            calculator.DeclareVariable("x");
-            calculator.DeclareVariable("y");
+            DeclareVariable(calculator, "x");
+            DeclareVariable(calculator, "y");
             calculator.DeclareFunction("fn", "x-y");
 
-            calculator.SetVariable("x", "50");
-            calculator.SetVariable("y", "20");
+            SetVariable(calculator, "x", "50");
+            SetVariable(calculator, "y", "20");
 
             Assert.IsTrue(calculator.GetValue("fn") == 30);
         }
@@ -179,10 +187,20 @@ namespace CalculatorTests
         public void DeclareFunctionWhenDivisorIs0_InvalidOperationExceptionThrown()
         {
             Calculator.Calculator calculator = new Calculator.Calculator();
-            calculator.SetVariable("x", "5");
-            calculator.SetVariable("y", "0");
+            SetVariable(calculator, "x", "5");
+            SetVariable(calculator, "y", "0");
 
             calculator.DeclareFunction("XDivideY", "x/y");
+        }
+
+        private void SetVariable(Calculator.Calculator calculator, string varName, string varValue)
+        {
+            calculator.SetVariable(varName, varValue);
+        }
+
+        private void DeclareVariable(Calculator.Calculator calculator, string varName)
+        {
+            calculator.DeclareVariable(varName);
         }
     }
 }

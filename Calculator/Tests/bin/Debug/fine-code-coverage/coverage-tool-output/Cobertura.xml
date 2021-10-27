@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage line-rate="0.8943661971830986" branch-rate="0.7910447761194029" lines-covered="254" lines-valid="284" branches-covered="53" branches-valid="67" complexity="69" version="0" timestamp="1634763970">
+<coverage line-rate="0.9041095890410958" branch-rate="0.7910447761194029" lines-covered="264" lines-valid="292" branches-covered="53" branches-valid="67" complexity="73" version="0" timestamp="1635350116">
   <sources />
   <packages>
-    <package name="Calculator" line-rate="0.9095744680851063" branch-rate="0.7910447761194029" complexity="54">
+    <package name="Calculator" line-rate="0.9193548387096774" branch-rate="0.7910447761194029" complexity="54">
       <classes>
         <class name="Calculator.Calculator" filename="C:\Users\Irina\source\repos\TiOPO\Calculator\Calculator\Calculator.cs" line-rate="0.9310344827586207" branch-rate="0.7910447761194029" complexity="4">
           <methods>
@@ -459,93 +459,109 @@
           <methods>
             <method name="Main" signature="(System.String[])" line-rate="0" branch-rate="1" complexity="NaN">
               <lines>
-                <line number="8" hits="0" branch="false" />
-                <line number="9" hits="0" branch="false" />
                 <line number="10" hits="0" branch="false" />
                 <line number="11" hits="0" branch="false" />
-                <line number="13" hits="0" branch="false" />
+                <line number="12" hits="0" branch="false" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="8" hits="0" branch="false" />
-            <line number="9" hits="0" branch="false" />
             <line number="10" hits="0" branch="false" />
             <line number="11" hits="0" branch="false" />
-            <line number="13" hits="0" branch="false" />
+            <line number="12" hits="0" branch="false" />
           </lines>
         </class>
       </classes>
     </package>
-    <package name="Tests" line-rate="0.8645833333333334" branch-rate="1" complexity="15">
+    <package name="Tests" line-rate="0.8773584905660378" branch-rate="1" complexity="19">
       <classes>
-        <class name="CalculatorTests.DeclareFunction" filename="C:\Users\Irina\source\repos\TiOPO\Calculator\Tests\CalculatorTests.cs" line-rate="0.9583333333333334" branch-rate="1" complexity="3">
+        <class name="CalculatorTests.DeclareFunction" filename="C:\Users\Irina\source\repos\TiOPO\Calculator\Tests\CalculatorTests.cs" line-rate="0.9666666666666667" branch-rate="1" complexity="3">
           <methods>
             <method name="DeclareFunctionWithOperation_FunctionIsDeclared" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="151" hits="1" branch="false" />
-                <line number="152" hits="1" branch="false" />
-                <line number="153" hits="1" branch="false" />
-                <line number="154" hits="1" branch="false" />
-                <line number="156" hits="1" branch="false" />
-                <line number="157" hits="1" branch="false" />
                 <line number="159" hits="1" branch="false" />
                 <line number="160" hits="1" branch="false" />
                 <line number="161" hits="1" branch="false" />
+                <line number="162" hits="1" branch="false" />
+                <line number="164" hits="1" branch="false" />
+                <line number="165" hits="1" branch="false" />
+                <line number="167" hits="1" branch="false" />
+                <line number="168" hits="1" branch="false" />
+                <line number="169" hits="1" branch="false" />
               </lines>
             </method>
             <method name="RecalculateFunction_FunctionIsDeclared" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="165" hits="1" branch="false" />
-                <line number="166" hits="1" branch="false" />
-                <line number="167" hits="1" branch="false" />
-                <line number="168" hits="1" branch="false" />
-                <line number="169" hits="1" branch="false" />
-                <line number="171" hits="1" branch="false" />
-                <line number="172" hits="1" branch="false" />
+                <line number="173" hits="1" branch="false" />
                 <line number="174" hits="1" branch="false" />
                 <line number="175" hits="1" branch="false" />
+                <line number="176" hits="1" branch="false" />
+                <line number="177" hits="1" branch="false" />
+                <line number="179" hits="1" branch="false" />
+                <line number="180" hits="1" branch="false" />
+                <line number="182" hits="1" branch="false" />
+                <line number="183" hits="1" branch="false" />
               </lines>
             </method>
             <method name="DeclareFunctionWhenDivisorIs0_InvalidOperationExceptionThrown" signature="()" line-rate="0.8333333333333334" branch-rate="1" complexity="1">
               <lines>
-                <line number="180" hits="1" branch="false" />
-                <line number="181" hits="1" branch="false" />
-                <line number="182" hits="1" branch="false" />
-                <line number="183" hits="1" branch="false" />
-                <line number="185" hits="1" branch="false" />
-                <line number="186" hits="0" branch="false" />
+                <line number="188" hits="1" branch="false" />
+                <line number="189" hits="1" branch="false" />
+                <line number="190" hits="1" branch="false" />
+                <line number="191" hits="1" branch="false" />
+                <line number="193" hits="1" branch="false" />
+                <line number="194" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="SetVariable" signature="(Calculator.Calculator,System.String,System.String)" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="197" hits="4" branch="false" />
+                <line number="198" hits="4" branch="false" />
+                <line number="199" hits="4" branch="false" />
+              </lines>
+            </method>
+            <method name="DeclareVariable" signature="(Calculator.Calculator,System.String)" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="202" hits="4" branch="false" />
+                <line number="203" hits="4" branch="false" />
+                <line number="204" hits="4" branch="false" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="151" hits="1" branch="false" />
-            <line number="152" hits="1" branch="false" />
-            <line number="153" hits="1" branch="false" />
-            <line number="154" hits="1" branch="false" />
-            <line number="156" hits="1" branch="false" />
-            <line number="157" hits="1" branch="false" />
             <line number="159" hits="1" branch="false" />
             <line number="160" hits="1" branch="false" />
             <line number="161" hits="1" branch="false" />
+            <line number="162" hits="1" branch="false" />
+            <line number="164" hits="1" branch="false" />
             <line number="165" hits="1" branch="false" />
-            <line number="166" hits="1" branch="false" />
             <line number="167" hits="1" branch="false" />
             <line number="168" hits="1" branch="false" />
             <line number="169" hits="1" branch="false" />
-            <line number="171" hits="1" branch="false" />
-            <line number="172" hits="1" branch="false" />
+            <line number="173" hits="1" branch="false" />
             <line number="174" hits="1" branch="false" />
             <line number="175" hits="1" branch="false" />
+            <line number="176" hits="1" branch="false" />
+            <line number="177" hits="1" branch="false" />
+            <line number="179" hits="1" branch="false" />
             <line number="180" hits="1" branch="false" />
-            <line number="181" hits="1" branch="false" />
             <line number="182" hits="1" branch="false" />
             <line number="183" hits="1" branch="false" />
-            <line number="185" hits="1" branch="false" />
-            <line number="186" hits="0" branch="false" />
+            <line number="188" hits="1" branch="false" />
+            <line number="189" hits="1" branch="false" />
+            <line number="190" hits="1" branch="false" />
+            <line number="191" hits="1" branch="false" />
+            <line number="193" hits="1" branch="false" />
+            <line number="194" hits="0" branch="false" />
+            <line number="197" hits="4" branch="false" />
+            <line number="198" hits="4" branch="false" />
+            <line number="199" hits="4" branch="false" />
+            <line number="202" hits="4" branch="false" />
+            <line number="203" hits="4" branch="false" />
+            <line number="204" hits="4" branch="false" />
           </lines>
         </class>
-        <class name="CalculatorTests.DeclareVariable" filename="C:\Users\Irina\source\repos\TiOPO\Calculator\Tests\CalculatorTests.cs" line-rate="0.7647058823529411" branch-rate="1" complexity="6">
+        <class name="CalculatorTests.DeclareVariable" filename="C:\Users\Irina\source\repos\TiOPO\Calculator\Tests\CalculatorTests.cs" line-rate="0.7575757575757576" branch-rate="1" complexity="6">
           <methods>
             <method name="VariableWithCorrectName_VarIsAdded" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -555,54 +571,53 @@
                 <line number="17" hits="1" branch="false" />
                 <line number="19" hits="1" branch="false" />
                 <line number="20" hits="1" branch="false" />
-                <line number="21" hits="1" branch="false" />
               </lines>
             </method>
             <method name="VariableWithSameName_ArgumentExceptionThrown" signature="()" line-rate="0.8" branch-rate="1" complexity="1">
               <lines>
+                <line number="25" hits="1" branch="false" />
                 <line number="26" hits="1" branch="false" />
-                <line number="27" hits="1" branch="false" />
+                <line number="28" hits="1" branch="false" />
                 <line number="29" hits="1" branch="false" />
-                <line number="30" hits="1" branch="false" />
-                <line number="31" hits="0" branch="false" />
+                <line number="30" hits="0" branch="false" />
               </lines>
             </method>
             <method name="UnderscoresInName_VarIsAdded" signature="()" line-rate="0.6" branch-rate="1" complexity="1">
               <lines>
+                <line number="34" hits="1" branch="false" />
                 <line number="35" hits="1" branch="false" />
-                <line number="36" hits="1" branch="false" />
+                <line number="37" hits="1" branch="false" />
                 <line number="38" hits="1" branch="false" />
                 <line number="39" hits="1" branch="false" />
-                <line number="40" hits="1" branch="false" />
+                <line number="40" hits="0" branch="false" />
                 <line number="41" hits="0" branch="false" />
                 <line number="42" hits="0" branch="false" />
                 <line number="43" hits="0" branch="false" />
-                <line number="44" hits="0" branch="false" />
-                <line number="45" hits="1" branch="false" />
+                <line number="44" hits="1" branch="false" />
               </lines>
             </method>
             <method name="FirstCharacterIsDigit_ArgumentExceptionThrown" signature="()" line-rate="0.75" branch-rate="1" complexity="1">
               <lines>
+                <line number="49" hits="1" branch="false" />
                 <line number="50" hits="1" branch="false" />
-                <line number="51" hits="1" branch="false" />
-                <line number="53" hits="1" branch="false" />
-                <line number="54" hits="0" branch="false" />
+                <line number="52" hits="1" branch="false" />
+                <line number="53" hits="0" branch="false" />
               </lines>
             </method>
             <method name="ForbiddenCharacterInName_ArgumentExceptionThrown" signature="()" line-rate="0.75" branch-rate="1" complexity="1">
               <lines>
+                <line number="58" hits="1" branch="false" />
                 <line number="59" hits="1" branch="false" />
-                <line number="60" hits="1" branch="false" />
-                <line number="62" hits="1" branch="false" />
-                <line number="63" hits="0" branch="false" />
+                <line number="61" hits="1" branch="false" />
+                <line number="62" hits="0" branch="false" />
               </lines>
             </method>
             <method name="NameIsEmptyString_ArgumentExceptionThrown" signature="()" line-rate="0.75" branch-rate="1" complexity="1">
               <lines>
+                <line number="67" hits="1" branch="false" />
                 <line number="68" hits="1" branch="false" />
-                <line number="69" hits="1" branch="false" />
-                <line number="71" hits="1" branch="false" />
-                <line number="72" hits="0" branch="false" />
+                <line number="70" hits="1" branch="false" />
+                <line number="71" hits="0" branch="false" />
               </lines>
             </method>
           </methods>
@@ -613,140 +628,157 @@
             <line number="17" hits="1" branch="false" />
             <line number="19" hits="1" branch="false" />
             <line number="20" hits="1" branch="false" />
-            <line number="21" hits="1" branch="false" />
+            <line number="25" hits="1" branch="false" />
             <line number="26" hits="1" branch="false" />
-            <line number="27" hits="1" branch="false" />
+            <line number="28" hits="1" branch="false" />
             <line number="29" hits="1" branch="false" />
-            <line number="30" hits="1" branch="false" />
-            <line number="31" hits="0" branch="false" />
+            <line number="30" hits="0" branch="false" />
+            <line number="34" hits="1" branch="false" />
             <line number="35" hits="1" branch="false" />
-            <line number="36" hits="1" branch="false" />
+            <line number="37" hits="1" branch="false" />
             <line number="38" hits="1" branch="false" />
             <line number="39" hits="1" branch="false" />
-            <line number="40" hits="1" branch="false" />
+            <line number="40" hits="0" branch="false" />
             <line number="41" hits="0" branch="false" />
             <line number="42" hits="0" branch="false" />
             <line number="43" hits="0" branch="false" />
-            <line number="44" hits="0" branch="false" />
-            <line number="45" hits="1" branch="false" />
+            <line number="44" hits="1" branch="false" />
+            <line number="49" hits="1" branch="false" />
             <line number="50" hits="1" branch="false" />
-            <line number="51" hits="1" branch="false" />
-            <line number="53" hits="1" branch="false" />
-            <line number="54" hits="0" branch="false" />
+            <line number="52" hits="1" branch="false" />
+            <line number="53" hits="0" branch="false" />
+            <line number="58" hits="1" branch="false" />
             <line number="59" hits="1" branch="false" />
-            <line number="60" hits="1" branch="false" />
-            <line number="62" hits="1" branch="false" />
-            <line number="63" hits="0" branch="false" />
+            <line number="61" hits="1" branch="false" />
+            <line number="62" hits="0" branch="false" />
+            <line number="67" hits="1" branch="false" />
             <line number="68" hits="1" branch="false" />
-            <line number="69" hits="1" branch="false" />
-            <line number="71" hits="1" branch="false" />
-            <line number="72" hits="0" branch="false" />
+            <line number="70" hits="1" branch="false" />
+            <line number="71" hits="0" branch="false" />
           </lines>
         </class>
-        <class name="CalculatorTests.SetVariable" filename="C:\Users\Irina\source\repos\TiOPO\Calculator\Tests\CalculatorTests.cs" line-rate="0.8947368421052632" branch-rate="1" complexity="6">
+        <class name="CalculatorTests.SetVariable" filename="C:\Users\Irina\source\repos\TiOPO\Calculator\Tests\CalculatorTests.cs" line-rate="0.9069767441860465" branch-rate="1" complexity="6">
           <methods>
             <method name="VariableWithCorrectNameAndCorrectDoubleValue_VarAndValueAreAdded" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
+                <line number="79" hits="1" branch="false" />
                 <line number="80" hits="1" branch="false" />
-                <line number="81" hits="1" branch="false" />
+                <line number="82" hits="1" branch="false" />
                 <line number="83" hits="1" branch="false" />
-                <line number="84" hits="1" branch="false" />
+                <line number="85" hits="1" branch="false" />
                 <line number="86" hits="1" branch="false" />
-                <line number="87" hits="1" branch="false" />
-                <line number="88" hits="1" branch="false" />
               </lines>
             </method>
             <method name="ReassigneVarWithAnotherVarValue_VarAndValueAreAdded" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="92" hits="1" branch="false" />
+                <line number="90" hits="1" branch="false" />
+                <line number="91" hits="1" branch="false" />
                 <line number="93" hits="1" branch="false" />
-                <line number="95" hits="1" branch="false" />
+                <line number="94" hits="1" branch="false" />
                 <line number="96" hits="1" branch="false" />
-                <line number="98" hits="1" branch="false" />
-                <line number="99" hits="1" branch="false" />
+                <line number="97" hits="1" branch="false" />
               </lines>
             </method>
             <method name="ReassigneVarWithAnotherFnValue_VarAndValueAreAdded" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
+                <line number="101" hits="1" branch="false" />
+                <line number="102" hits="1" branch="false" />
                 <line number="103" hits="1" branch="false" />
                 <line number="104" hits="1" branch="false" />
                 <line number="105" hits="1" branch="false" />
-                <line number="106" hits="1" branch="false" />
                 <line number="107" hits="1" branch="false" />
-                <line number="109" hits="1" branch="false" />
-                <line number="110" hits="1" branch="false" />
+                <line number="108" hits="1" branch="false" />
               </lines>
             </method>
             <method name="ReassigneVarWithFnName_ArgumentExceptionThrown" signature="()" line-rate="0.8333333333333334" branch-rate="1" complexity="1">
               <lines>
+                <line number="113" hits="1" branch="false" />
+                <line number="114" hits="1" branch="false" />
                 <line number="115" hits="1" branch="false" />
                 <line number="116" hits="1" branch="false" />
-                <line number="117" hits="1" branch="false" />
                 <line number="118" hits="1" branch="false" />
-                <line number="120" hits="1" branch="false" />
-                <line number="121" hits="0" branch="false" />
+                <line number="119" hits="0" branch="false" />
               </lines>
             </method>
             <method name="ReassigneVarWithNameThatNotDeclared_InvalidOperationExceptionThrown" signature="()" line-rate="0.75" branch-rate="1" complexity="1">
               <lines>
-                <line number="126" hits="1" branch="false" />
+                <line number="124" hits="1" branch="false" />
+                <line number="125" hits="1" branch="false" />
                 <line number="127" hits="1" branch="false" />
-                <line number="129" hits="1" branch="false" />
-                <line number="130" hits="0" branch="false" />
+                <line number="128" hits="0" branch="false" />
               </lines>
             </method>
             <method name="SetDivisibleValueToZero_InvalidOperationExceptionThrown" signature="()" line-rate="0.75" branch-rate="1" complexity="1">
               <lines>
+                <line number="133" hits="1" branch="false" />
+                <line number="134" hits="1" branch="false" />
                 <line number="135" hits="1" branch="false" />
                 <line number="136" hits="1" branch="false" />
                 <line number="137" hits="1" branch="false" />
-                <line number="138" hits="1" branch="false" />
                 <line number="139" hits="1" branch="false" />
-                <line number="141" hits="1" branch="false" />
-                <line number="142" hits="0" branch="false" />
-                <line number="143" hits="0" branch="false" />
+                <line number="140" hits="0" branch="false" />
+                <line number="141" hits="0" branch="false" />
+              </lines>
+            </method>
+            <method name="DeclareVariable" signature="(Calculator.Calculator,System.String)" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="144" hits="1" branch="false" />
+                <line number="145" hits="1" branch="false" />
+                <line number="146" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="DeclareFunction" signature="(Calculator.Calculator,System.String,System.String)" line-rate="1" branch-rate="1" complexity="NaN">
+              <lines>
+                <line number="149" hits="3" branch="false" />
+                <line number="150" hits="3" branch="false" />
+                <line number="151" hits="3" branch="false" />
               </lines>
             </method>
           </methods>
           <lines>
+            <line number="79" hits="1" branch="false" />
             <line number="80" hits="1" branch="false" />
-            <line number="81" hits="1" branch="false" />
+            <line number="82" hits="1" branch="false" />
             <line number="83" hits="1" branch="false" />
-            <line number="84" hits="1" branch="false" />
+            <line number="85" hits="1" branch="false" />
             <line number="86" hits="1" branch="false" />
-            <line number="87" hits="1" branch="false" />
-            <line number="88" hits="1" branch="false" />
-            <line number="92" hits="1" branch="false" />
+            <line number="90" hits="1" branch="false" />
+            <line number="91" hits="1" branch="false" />
             <line number="93" hits="1" branch="false" />
-            <line number="95" hits="1" branch="false" />
+            <line number="94" hits="1" branch="false" />
             <line number="96" hits="1" branch="false" />
-            <line number="98" hits="1" branch="false" />
-            <line number="99" hits="1" branch="false" />
+            <line number="97" hits="1" branch="false" />
+            <line number="101" hits="1" branch="false" />
+            <line number="102" hits="1" branch="false" />
             <line number="103" hits="1" branch="false" />
             <line number="104" hits="1" branch="false" />
             <line number="105" hits="1" branch="false" />
-            <line number="106" hits="1" branch="false" />
             <line number="107" hits="1" branch="false" />
-            <line number="109" hits="1" branch="false" />
-            <line number="110" hits="1" branch="false" />
+            <line number="108" hits="1" branch="false" />
+            <line number="113" hits="1" branch="false" />
+            <line number="114" hits="1" branch="false" />
             <line number="115" hits="1" branch="false" />
             <line number="116" hits="1" branch="false" />
-            <line number="117" hits="1" branch="false" />
             <line number="118" hits="1" branch="false" />
-            <line number="120" hits="1" branch="false" />
-            <line number="121" hits="0" branch="false" />
-            <line number="126" hits="1" branch="false" />
+            <line number="119" hits="0" branch="false" />
+            <line number="124" hits="1" branch="false" />
+            <line number="125" hits="1" branch="false" />
             <line number="127" hits="1" branch="false" />
-            <line number="129" hits="1" branch="false" />
-            <line number="130" hits="0" branch="false" />
+            <line number="128" hits="0" branch="false" />
+            <line number="133" hits="1" branch="false" />
+            <line number="134" hits="1" branch="false" />
             <line number="135" hits="1" branch="false" />
             <line number="136" hits="1" branch="false" />
             <line number="137" hits="1" branch="false" />
-            <line number="138" hits="1" branch="false" />
             <line number="139" hits="1" branch="false" />
-            <line number="141" hits="1" branch="false" />
-            <line number="142" hits="0" branch="false" />
-            <line number="143" hits="0" branch="false" />
+            <line number="140" hits="0" branch="false" />
+            <line number="141" hits="0" branch="false" />
+            <line number="144" hits="1" branch="false" />
+            <line number="145" hits="1" branch="false" />
+            <line number="146" hits="1" branch="false" />
+            <line number="149" hits="3" branch="false" />
+            <line number="150" hits="3" branch="false" />
+            <line number="151" hits="3" branch="false" />
           </lines>
         </class>
       </classes>

@@ -1,4 +1,6 @@
 ﻿using Calculator;
+using System;
+using System.Collections.Generic;
 
 namespace Program
 {
@@ -7,9 +9,6 @@ namespace Program
         static void Main(string[] args)
         {
             Calculator.Calculator calculator = new Calculator.Calculator();
-            calculator.DeclareVariable("x");
-            calculator.DeclareFunction("fn", "x");
-
         }
     }
 }

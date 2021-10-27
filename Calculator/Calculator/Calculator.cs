@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Calculator
 {
-    struct Function
+    public struct Function
     {
         public string leftOperand;
         public Nullable<char> operation;
