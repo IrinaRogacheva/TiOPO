@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TVSet", "TVSet\TVSet.csproj", "{A6F03A40-F951-4E9C-A7B2-D33CEA7EED0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TVSetTests", "TVSetTests\TVSetTests.csproj", "{B479B0E3-C09F-404A-AC11-4815F564A708}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A6F03A40-F951-4E9C-A7B2-D33CEA7EED0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6F03A40-F951-4E9C-A7B2-D33CEA7EED0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6F03A40-F951-4E9C-A7B2-D33CEA7EED0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6F03A40-F951-4E9C-A7B2-D33CEA7EED0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B479B0E3-C09F-404A-AC11-4815F564A708}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B479B0E3-C09F-404A-AC11-4815F564A708}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B479B0E3-C09F-404A-AC11-4815F564A708}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B479B0E3-C09F-404A-AC11-4815F564A708}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5F68510D-523D-42EB-9373-665EC37BBD57}
+	EndGlobalSection
+EndGlobal

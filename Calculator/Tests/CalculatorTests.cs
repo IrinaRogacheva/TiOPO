@@ -97,28 +97,6 @@ namespace CalculatorTests
         }
 
         [TestMethod]
-        public void ReassigneVarWithAnotherFnValue_VarAndValueAreAdded()
-        {
-            Calculator.Calculator calculator = new Calculator.Calculator();
-            calculator.SetVariable("x", "20");
-            DeclareFunction(calculator, "fn", "x");
-            calculator.SetVariable("y", "fn");
-
-            Assert.IsTrue(calculator.GetValue("y") == 20);
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentException), "The variable name must not match the name of the declared function")]
-        public void ReassigneVarWithFnName_ArgumentExceptionThrown()
-        {
-            Calculator.Calculator calculator = new Calculator.Calculator();
-            DeclareVariable(calculator, "x");
-            DeclareFunction(calculator, "fn", "x");
-
-            calculator.SetVariable("fn", "3,14");
-        }
-
-        [TestMethod]
         [ExpectedException(typeof(InvalidOperationException), "A variable named \"y\" is not declared")]
         public void ReassigneVarWithNameThatNotDeclared_InvalidOperationExceptionThrown()
         {
@@ -126,81 +104,63 @@ namespace CalculatorTests
 
             calculator.SetVariable("x", "y");
         }
-
-        [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException), "Division by 0")]
-        public void SetDivisibleValueToZero_InvalidOperationExceptionThrown()
-        {
-            Calculator.Calculator calculator = new Calculator.Calculator();
-            calculator.SetVariable("x", "60");
-            calculator.SetVariable("y", "20");
-            DeclareFunction(calculator, "fn", "x/y");
-
-            calculator.SetVariable("y", "0");
-            Assert.IsTrue(calculator.GetValue("y") == 20);
-        }
-
-        private void DeclareVariable(Calculator.Calculator calculator, string varName)
-        {
-            calculator.DeclareVariable(varName);
-        }
-
-        private void DeclareFunction(Calculator.Calculator calculator, string fnName, string fnValue)
-        {
-            calculator.DeclareFunction(fnName, fnValue);
-        }
     }
 
     [TestClass]
     public class DeclareFunction
     {
-        [TestMethod]
-        public void DeclareFunctionWithOperation_FunctionIsDeclared()
+        Calculator.Calculator calculator;
+
+        [TestInitialize]
+        public void TestInit()
         {
-            Calculator.Calculator calculator = new Calculator.Calculator();
-            DeclareVariable(calculator, "x");
-            DeclareVariable(calculator, "y");
+            calculator = new Calculator.Calculator();
+            calculator.DeclareVariable("x");
+            calculator.DeclareVariable("y");
 
-            calculator.DeclareFunction("fn", "x+y");
-            Dictionary<string, double> fns = calculator.GetFns();
-
-            Assert.IsTrue(fns.ContainsKey("fn"));
-            Assert.IsTrue(Double.IsNaN(fns["fn"]));
+            calculator.SetVariable("x", "50");
+            calculator.SetVariable("y", "0");
         }
 
         [TestMethod]
-        public void RecalculateFunction_FunctionIsDeclared()
+        public void DeclareFunctionWithoutOperation_FunctionIsDeclared()
         {
-            Calculator.Calculator calculator = new Calculator.Calculator();
-            DeclareVariable(calculator, "x");
-            DeclareVariable(calculator, "y");
+            calculator.DeclareFunction("fn", "x");
+            Dictionary<string, double> fns = calculator.GetFns();
+
+            Assert.IsTrue(fns["fn"] == 50);
+        }
+
+        [TestMethod]
+        public void DeclareFunctionWithOperationPlus_FunctionIsDeclared()
+        {
+            calculator.DeclareFunction("fn", "x+y");
+            Dictionary<string, double> fns = calculator.GetFns();
+
+            Assert.IsTrue(fns["fn"] == 50);
+        }
+
+        [TestMethod]
+        public void DeclareFunctionWithOperationMinus_FunctionIsDeclared()
+        {
             calculator.DeclareFunction("fn", "x-y");
 
-            SetVariable(calculator, "x", "50");
-            SetVariable(calculator, "y", "20");
+            Assert.IsTrue(calculator.GetValue("fn") == 50);
+        }
 
-            Assert.IsTrue(calculator.GetValue("fn") == 30);
+        [TestMethod]
+        public void DeclareFunctionWithOperationMultiply_FunctionIsDeclared()
+        {
+            calculator.DeclareFunction("fn", "x*y");
+
+            Assert.IsTrue(calculator.GetValue("fn") == 0);
         }
 
         [TestMethod]
         [ExpectedException(typeof(InvalidOperationException), "Division by 0")]
         public void DeclareFunctionWhenDivisorIs0_InvalidOperationExceptionThrown()
         {
-            Calculator.Calculator calculator = new Calculator.Calculator();
-            SetVariable(calculator, "x", "5");
-            SetVariable(calculator, "y", "0");
-
             calculator.DeclareFunction("XDivideY", "x/y");
-        }
-
-        private void SetVariable(Calculator.Calculator calculator, string varName, string varValue)
-        {
-            calculator.SetVariable(varName, varValue);
-        }
-
-        private void DeclareVariable(Calculator.Calculator calculator, string varName)
-        {
-            calculator.DeclareVariable(varName);
         }
     }
 }

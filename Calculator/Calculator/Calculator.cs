@@ -224,7 +224,7 @@ namespace Calculator
                 default: throw new ArgumentException("Unknown action");
             }
         }
-        private void CheckForDependencies(string dependencyName)
+        public void CheckForDependencies(string dependencyName)
         {
             if (_dependencies.ContainsKey(dependencyName))
             {

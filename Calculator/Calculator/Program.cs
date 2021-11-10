@@ -8,7 +8,6 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            Calculator.Calculator calculator = new Calculator.Calculator();
         }
     }
 }

@@ -4,3 +4,4 @@ C:\Users\Irina\source\repos\TiOPO\Calculator\Calculator\bin\Debug\Calculator.pdb
 C:\Users\Irina\source\repos\TiOPO\Calculator\Calculator\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
 C:\Users\Irina\source\repos\TiOPO\Calculator\Calculator\obj\Debug\Calculator.exe
 C:\Users\Irina\source\repos\TiOPO\Calculator\Calculator\obj\Debug\Calculator.pdb
+C:\Users\Irina\source\repos\TiOPO\Calculator\Calculator\obj\Debug\Calculator.csprojAssemblyReference.cache
