@@ -4,3 +4,4 @@ C:\Users\Irina\source\repos\TiOPO\TVSet\TVSet\bin\Debug\TVSet.pdb
 C:\Users\Irina\source\repos\TiOPO\TVSet\TVSet\obj\Debug\TVSet.csproj.CoreCompileInputs.cache
 C:\Users\Irina\source\repos\TiOPO\TVSet\TVSet\obj\Debug\TVSet.exe
 C:\Users\Irina\source\repos\TiOPO\TVSet\TVSet\obj\Debug\TVSet.pdb
+C:\Users\Irina\source\repos\TiOPO\TVSet\TVSet\obj\Debug\TVSet.csprojAssemblyReference.cache

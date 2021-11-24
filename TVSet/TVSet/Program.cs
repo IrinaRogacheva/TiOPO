@@ -13,6 +13,12 @@ namespace TVSet
         {
             TVSet tv = new TVSet();
 
+            tv.TurnOn();
+            tv.SelectChannel(8);
+
+            tv.SelectChannel(25);
+            tv.SelectPreviousChannel();
+
             Console.WriteLine("channel: " + tv.GetChannel());
         }
     }

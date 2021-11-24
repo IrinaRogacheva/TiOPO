@@ -35,6 +35,24 @@ namespace TVSetTests
         }
 
         [TestMethod]
+        public void TryToSelectPreviousChannel_NullIsReturned()
+        {
+            Assert.IsTrue(tv.SelectPreviousChannel() == false);
+        }
+
+        [TestMethod]
+        public void TryToSelectChannelAfter_NullIsReturned()
+        {
+            Assert.IsTrue(tv.SelectChannelAfter() == false);
+        }
+
+        [TestMethod]
+        public void TryToSelectChannelBefore_NullIsReturned()
+        {
+            Assert.IsTrue(tv.SelectChannelBefore() == false);
+        }
+
+        [TestMethod]
         public void TurnOnTV_TVIsTurnedOn()
         {
             tv.TurnOn();
@@ -86,6 +104,51 @@ namespace TVSetTests
         {
             tv.SelectChannel(100);
             Assert.IsTrue(tv.GetChannel() == 1);
+        }
+
+        [TestMethod]
+        public void SelectPreviousChannel_PreviousChannelIsSelected()
+        {
+            tv.SelectChannel(8);
+
+            tv.SelectChannel(25);
+            tv.SelectPreviousChannel();
+
+            Assert.IsTrue(tv.GetChannel() == 8);
+        }
+
+        [TestMethod]
+        public void SelectChannelAfter_ChannelAfterIsSelected()
+        {
+            tv.SelectChannel(25);
+
+            tv.SelectChannelAfter();
+            Assert.IsTrue(tv.GetChannel() == 26);
+        }
+
+        [TestMethod]
+        public void SelectChannelAfterMax_ChannelAfterIsSelected()
+        {
+            tv.SelectChannel(99);
+
+            tv.SelectChannelAfter();
+            Assert.IsTrue(tv.GetChannel() == 1);
+        }
+
+        [TestMethod]
+        public void SelectChannelBefore_ChannelBeforeIsSelected()
+        {
+            tv.SelectChannel(25);
+
+            tv.SelectChannelBefore();
+            Assert.IsTrue(tv.GetChannel() == 24);
+        }
+
+        [TestMethod]
+        public void SelectChannelBeforeMin_ChannelAfterIsSelected()
+        {
+            tv.SelectChannelBefore();
+            Assert.IsTrue(tv.GetChannel() == 99);
         }
 
         [TestMethod]
