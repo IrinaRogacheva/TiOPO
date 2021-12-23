@@ -1,0 +1,11 @@
+C:\Users\Irina\source\repos\TiOPO\APITesting\APITesting\bin\Debug\APITesting.dll
+C:\Users\Irina\source\repos\TiOPO\APITesting\APITesting\bin\Debug\APITesting.pdb
+C:\Users\Irina\source\repos\TiOPO\APITesting\APITesting\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Irina\source\repos\TiOPO\APITesting\APITesting\bin\Debug\RestSharp.dll
+C:\Users\Irina\source\repos\TiOPO\APITesting\APITesting\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Irina\source\repos\TiOPO\APITesting\APITesting\bin\Debug\RestSharp.xml
+C:\Users\Irina\source\repos\TiOPO\APITesting\APITesting\obj\Debug\APITesting.csproj.CoreCompileInputs.cache
+C:\Users\Irina\source\repos\TiOPO\APITesting\APITesting\obj\Debug\APITesting.csproj.CopyComplete
+C:\Users\Irina\source\repos\TiOPO\APITesting\APITesting\obj\Debug\APITesting.dll
+C:\Users\Irina\source\repos\TiOPO\APITesting\APITesting\obj\Debug\APITesting.pdb
+C:\Users\Irina\source\repos\TiOPO\APITesting\APITesting\obj\Debug\APITesting.csprojAssemblyReference.cache
